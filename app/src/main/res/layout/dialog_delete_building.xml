@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtDeleteBuildingLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2sp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"></TextView>
+
+    <Button
+        android:id="@+id/btnDeleteBuilding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:text="Slett"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"></Button>
+
+    <Button
+        android:id="@+id/btnCancelDeleteBuilding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Avbryt"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"></Button>
+
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvBuildingName"
+        android:textSize="20sp">
+    </TextView>
+
+    <ListView
+        android:id="@+id/lvRooms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:divider="@color/colorPrimary"
+        android:dividerHeight="1dp"></ListView>
+
+    <Button
+        android:id="@+id/btnAddRoom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Legg til rom"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"></Button>
+
+    <Button
+        android:id="@+id/btnCancelViewRooms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#002626"
+        android:text="Avbryt"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"></Button>
+
+
+
+
+</LinearLayout>

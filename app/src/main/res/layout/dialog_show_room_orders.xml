@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bestillinger for rom"
+        android:textSize="20dp"
+        android:layout_marginLeft="3sp"
+        android:id="@+id/tvRoomName"
+        >
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3sp"
+        android:text="Bruk knappen under for å endre hvilken dag du vil se bestillinger for"
+        android:textSize="12sp"
+        >
+    </TextView>
+
+    <Button
+        android:id="@+id/etAddOrderShowForDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?attr/colorAccent"
+        android:textColor="@android:color/white"></Button>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:divider="@color/colorPrimary"
+        android:dividerHeight="1dp"
+        android:id="@+id/lvRoomOrders">
+    </ListView>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtNoAddButton">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/btnAddRoomOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Legg til bestilling"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"></Button>
+
+    <Button
+        android:id="@+id/btnShowRoomOrdersrBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryLessDark"
+        android:text="Tilbake"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"></Button>
+
+    <Button
+        android:id="@+id/btnCancelShowRoomOrders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="Tilbake til kart"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"></Button>
+
+
+</LinearLayout>

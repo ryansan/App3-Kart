@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtAddBuildingAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Legger til en bygning her"
+        android:textColor="#000000"
+        android:textSize="20sp">
+
+    </TextView>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="\nNavn:"
+        android:textColor="#000000"
+        android:textSize="20sp">
+
+    </TextView>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etAddBuildingName"
+        android:hint="Velger du ikke å ikke lagre navn, lagres adressen som navn">
+    </EditText>
+
+
+    <Button
+        android:id="@+id/btnAddBuilding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Legg til"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"></Button>
+
+    <Button
+        android:id="@+id/btnCancelAddBuilding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="Avbryt"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"></Button>
+
+
+</LinearLayout>

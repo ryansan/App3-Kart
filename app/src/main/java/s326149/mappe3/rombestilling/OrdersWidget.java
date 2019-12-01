@@ -52,16 +52,10 @@ public class OrdersWidget extends AppWidgetProvider {
                         String dateChosenByUser = sdf.format(Calendar.getInstance().getTime());
                         String oDate = sdf.format(o.getDate());
 
-                        Log.d("Idag sys:", dateChosenByUser);
-                        Log.d("Idag order:", oDate);
 
                         if (dateChosenByUser.equals(oDate)) {
-                            Log.d("Idag sys:", dateChosenByUser);
-                            Log.d("Idag order:", oDate);
 
                             int iend = b.getAddress().indexOf(",");
-                            Log.d("AD", b.getAddress());
-                            Log.d("AD", "size: "+ iend);
                             String address  = b.getAddress();
                             String subString;
                             if(iend != -1){
@@ -82,13 +76,10 @@ public class OrdersWidget extends AppWidgetProvider {
             }
         }
 
-        Log.e("Sjekk i ", String.valueOf(i));
         if(i == reminders.size()){
-            Log.e("Inni == ", String.valueOf(i));
             i = 0;
             orders.clear();
         }else{
-            Log.d("Reminders: ", reminders.size()+"");
 
             if(reminders.size()>0){
                 updateViews.setTextViewText(R.id.widgettekst, reminders.get(i));

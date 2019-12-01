@@ -61,11 +61,9 @@ public class WebHandler {
 
 
    public String getNonAsyncBuildings(){
-       Log.d("non", "eh");
        GetJSON task = new GetJSON();
        try {
            String s = task.execute(new String[]{"http://student.cs.hioa.no/~s326149/getbuildings.php","http://student.cs.hioa.no/~s326149/getrooms.php","http://student.cs.hioa.no/~s326149/getorders.php"}).get();
-           Log.d("non", "S" +asyncBuildings.size());
            this.nonAsyncBuildings = asyncBuildings;
            this.nonAsyncRooms = asyncRooms;
            this.nonAsyncOrders = asyncOrders;
@@ -82,7 +80,6 @@ public class WebHandler {
                for (Order o: nonAsyncOrders) {
                    if(r.getID() == o.getRoom_ID()) {
                        r.getOrders().add(o);
-                       Log.d("NONS", o.getDate().toString());
                    }
                }
            }

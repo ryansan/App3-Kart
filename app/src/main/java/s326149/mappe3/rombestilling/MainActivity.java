@@ -163,17 +163,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void processFinish(String output) {
-        Log.d("PF:", "FINS");
         Log.d("Process Finsihed", output);
         buildings = webHandler.asyncBuildings;
         address = webHandler.address;
 
-     //   if(!output.equals("POSt ROOM")){
-     //       Toast.makeText(getBaseContext(), " ikke room", Toast.LENGTH_SHORT).show();
-            setMarkersForBuildings();
-    //    }else{
-    //        Toast.makeText(getBaseContext(), " room", Toast.LENGTH_SHORT).show();
-    //    }
+        setMarkersForBuildings();
     }
 
     @Override

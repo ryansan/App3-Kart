@@ -168,12 +168,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         buildings = webHandler.asyncBuildings;
         address = webHandler.address;
 
-        if(!output.equals("POSt ROOM")){
-            Toast.makeText(getBaseContext(), " ikke room", Toast.LENGTH_SHORT).show();
+     //   if(!output.equals("POSt ROOM")){
+     //       Toast.makeText(getBaseContext(), " ikke room", Toast.LENGTH_SHORT).show();
             setMarkersForBuildings();
-        }else{
-            Toast.makeText(getBaseContext(), " room", Toast.LENGTH_SHORT).show();
-        }
+    //    }else{
+    //        Toast.makeText(getBaseContext(), " room", Toast.LENGTH_SHORT).show();
+    //    }
     }
 
     @Override
@@ -185,6 +185,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             buildings.get(buildings.size()-1).setID(Integer.parseInt(output));
             mMap.clear();
             setMarkersForBuildings();
+           // mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(buildings.get(buildings.size()-1).getLatLng().latitude, buildings.get(buildings.size()-1).getLatLng().longitude), mMap.getCameraPosition().zoom));
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(buildings.get(buildings.size()-1).getLatLng().latitude, buildings.get(buildings.size()-1).getLatLng().longitude), mMap.getCameraPosition().zoom+1));
         }else{
             Log.d("post b error", output);
         }
@@ -194,11 +196,5 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         for (Building b: buildings) {
             mMap.addMarker(new MarkerOptions().position(b.getLatLng()).title(b.getName()));
         }
-    }
-
-    @Override
-    protected void onResume() {
-        Log.d("MAIN", "ON RESUME");
-        super.onResume();
     }
 }

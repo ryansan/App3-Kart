@@ -26,6 +26,7 @@ public class OrdersWidget extends AppWidgetProvider {
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 
+
         i++;
         RemoteViews updateViews = new RemoteViews(context.getApplicationContext().getPackageName(), R.layout.orders_widget);
 

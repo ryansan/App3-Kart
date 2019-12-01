@@ -5,23 +5,18 @@ import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
-import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.widget.RemoteViews;
-import android.widget.TextView;
 
-import com.example.kart.fragments.models.Building;
-import com.example.kart.fragments.models.Order;
-import com.example.kart.fragments.models.Room;
-import com.example.kart.fragments.models.WebHandler;
+import com.example.kart.models.Building;
+import com.example.kart.models.Order;
+import com.example.kart.models.Room;
+import com.example.kart.models.WebHandler;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Locale;
 
 public class OrdersWidget extends AppWidgetProvider {
 

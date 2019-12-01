@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 import com.example.kart.MainActivity;
 import com.example.kart.R;
-import com.example.kart.fragments.models.Building;
-import com.example.kart.fragments.models.WebHandler;
+import com.example.kart.models.Building;
+import com.example.kart.models.WebHandler;
 import com.google.android.gms.maps.model.LatLng;
 
 import androidx.annotation.NonNull;

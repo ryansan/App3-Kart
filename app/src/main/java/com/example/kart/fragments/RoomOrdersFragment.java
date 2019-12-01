@@ -3,7 +3,6 @@ package com.example.kart.fragments;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,29 +11,22 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.kart.MainActivity;
 import com.example.kart.R;
-import com.example.kart.fragments.models.Building;
-import com.example.kart.fragments.models.DialogDismisser;
-import com.example.kart.fragments.models.Order;
-import com.example.kart.fragments.models.Room;
-import com.example.kart.fragments.models.WebHandler;
-import com.example.kart.fragments.models.interfaces.AsyncPostResponse;
+import com.example.kart.models.Building;
+import com.example.kart.models.DialogDismisser;
+import com.example.kart.models.Order;
+import com.example.kart.models.Room;
+import com.example.kart.models.WebHandler;
+import com.example.kart.interfaces.AsyncPostOrderResponse;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -43,7 +35,7 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-public class RoomOrdersFragment extends DialogFragment implements AsyncPostResponse {
+public class RoomOrdersFragment extends DialogFragment implements AsyncPostOrderResponse {
 
     private  Building building;
     TextView tvRoomName;
@@ -80,8 +72,7 @@ public class RoomOrdersFragment extends DialogFragment implements AsyncPostRespo
         View view = inflater.inflate(R.layout.dialog_show_room_orders, container,false);
 
         webHandler = ((MainActivity)getActivity()).webHandler;
-        webHandler.postDelegate = null;
-        webHandler.postDelegate = this;
+        webHandler.postOrderDelegate = this;
 
         tvRoomName = view.findViewById(R.id.tvRoomName);
         txtNoAddButton = view.findViewById(R.id.txtNoAddButton);
@@ -105,7 +96,7 @@ public class RoomOrdersFragment extends DialogFragment implements AsyncPostRespo
             @Override
             public void onClick(View view) {
                 //cancelAdding();
-                webHandler.postDelegate = null;
+                webHandler.postOrderDelegate = null;
                 Log.d("close","c)");
                 //dismissAllDialogs(getFragmentManager());
                 DialogDismisser.dismissAllDialogs(getFragmentManager());
@@ -332,7 +323,7 @@ public class RoomOrdersFragment extends DialogFragment implements AsyncPostRespo
     }
 
     @Override
-    public void postFinish(String output) {
+    public void postOrderFinish(String output) {
         Log.d("PF:", "FINS");
         Log.d("POST FIN IN ORDER", output);
 
@@ -356,7 +347,7 @@ public class RoomOrdersFragment extends DialogFragment implements AsyncPostRespo
 
     @Override
     public void onDismiss(DialogInterface dialog) {
-        this.webHandler.postDelegate = null;
+        this.webHandler.postOrderDelegate = null;
         super.onDismiss(dialog);
     }
 }

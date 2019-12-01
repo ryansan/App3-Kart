@@ -1,6 +1,5 @@
-package com.example.kart.fragments.models;
+package com.example.kart.models;
 
-import java.util.Calendar;
 import java.util.Date;
 
 public class Order {

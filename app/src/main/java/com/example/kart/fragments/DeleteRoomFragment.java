@@ -10,9 +10,9 @@ import android.widget.TextView;
 
 import com.example.kart.MainActivity;
 import com.example.kart.R;
-import com.example.kart.fragments.models.Building;
-import com.example.kart.fragments.models.Room;
-import com.example.kart.fragments.models.WebHandler;
+import com.example.kart.models.Building;
+import com.example.kart.models.Room;
+import com.example.kart.models.WebHandler;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

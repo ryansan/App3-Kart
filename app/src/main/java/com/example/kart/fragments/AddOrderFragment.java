@@ -13,14 +13,13 @@ import android.widget.Toast;
 
 import com.example.kart.MainActivity;
 import com.example.kart.R;
-import com.example.kart.fragments.models.DialogDismisser;
-import com.example.kart.fragments.models.Order;
-import com.example.kart.fragments.models.Room;
-import com.example.kart.fragments.models.WebHandler;
+import com.example.kart.models.DialogDismisser;
+import com.example.kart.models.Order;
+import com.example.kart.models.Room;
+import com.example.kart.models.WebHandler;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 

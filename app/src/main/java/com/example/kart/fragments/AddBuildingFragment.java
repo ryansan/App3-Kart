@@ -1,9 +1,5 @@
 package com.example.kart.fragments;
 
-import android.app.Activity;
-import android.content.DialogInterface;
-import android.location.Address;
-import android.location.Geocoder;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,20 +8,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.kart.MainActivity;
 import com.example.kart.R;
-import com.example.kart.fragments.models.Building;
-import com.example.kart.fragments.models.WebHandler;
-import com.example.kart.fragments.models.interfaces.AsyncAddressResponse;
-import com.example.kart.fragments.models.interfaces.AsyncRepsonse;
+import com.example.kart.models.Building;
+import com.example.kart.models.WebHandler;
+import com.example.kart.interfaces.AsyncAddressResponse;
 import com.google.android.gms.maps.model.LatLng;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

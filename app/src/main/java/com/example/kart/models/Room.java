@@ -1,6 +1,4 @@
-package com.example.kart.fragments.models;
-
-import com.google.android.gms.maps.model.LatLng;
+package com.example.kart.models;
 
 import java.util.ArrayList;
 

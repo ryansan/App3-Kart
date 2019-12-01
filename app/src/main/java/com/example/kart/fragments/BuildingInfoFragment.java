@@ -14,11 +14,10 @@ import android.widget.TextView;
 
 import com.example.kart.MainActivity;
 import com.example.kart.R;
-import com.example.kart.fragments.models.Building;
-import com.example.kart.fragments.models.Room;
-import com.example.kart.fragments.models.WebHandler;
-import com.example.kart.fragments.models.interfaces.AsyncPostResponse;
-import com.example.kart.fragments.models.interfaces.AsyncRepsonse;
+import com.example.kart.interfaces.AsyncPostRoomResponse;
+import com.example.kart.models.Building;
+import com.example.kart.models.Room;
+import com.example.kart.models.WebHandler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +28,7 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-public class BuildingInfoFragment extends DialogFragment implements AsyncPostResponse {
+public class BuildingInfoFragment extends DialogFragment implements AsyncPostRoomResponse {
 
     TextView buildingName;
     ListView lvRooms;
@@ -52,7 +51,7 @@ public class BuildingInfoFragment extends DialogFragment implements AsyncPostRes
         View view = inflater.inflate(R.layout.dialog_building_info, container,false);
 
         webHandler = ((MainActivity)getActivity()).webHandler;
-        webHandler.postDelegate = this;
+        webHandler.postRoomDelegate = this;
 
         buildingName = view.findViewById(R.id.tvBuildingName);
         btnCancel = view.findViewById(R.id.btnCancelViewRooms);
@@ -170,7 +169,7 @@ public class BuildingInfoFragment extends DialogFragment implements AsyncPostRes
     }
 
     @Override
-    public void postFinish(String output) {
+    public void postRoomFinish(String output) {
         Log.d("PF:", "FINS");
         Log.d("Process Finsihed in pst", output);
 
@@ -183,6 +182,7 @@ public class BuildingInfoFragment extends DialogFragment implements AsyncPostRes
         this.buildings = webHandler.asyncBuildings;
         listAdapter.notifyDataSetChanged();
     }
+
 
     @Override
     public void onResume() {

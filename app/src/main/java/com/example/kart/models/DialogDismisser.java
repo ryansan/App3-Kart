@@ -1,4 +1,4 @@
-package com.example.kart.fragments.models;
+package com.example.kart.models;
 
 import java.util.List;
 

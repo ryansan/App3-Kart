@@ -1,4 +1,4 @@
-package com.example.kart.fragments.models;
+package com.example.kart.models;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,9 +7,11 @@ import android.location.Geocoder;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.kart.fragments.models.interfaces.AsyncPostResponse;
-import com.example.kart.fragments.models.interfaces.AsyncAddressResponse;
-import com.example.kart.fragments.models.interfaces.AsyncRepsonse;
+import com.example.kart.interfaces.AsyncPostBuildingResponse;
+import com.example.kart.interfaces.AsyncPostOrderResponse;
+import com.example.kart.interfaces.AsyncAddressResponse;
+import com.example.kart.interfaces.AsyncPostRoomResponse;
+import com.example.kart.interfaces.AsyncRepsonse;
 import com.google.android.gms.maps.model.LatLng;
 
 import org.json.JSONArray;
@@ -34,7 +36,11 @@ public class WebHandler {
 
     public AsyncRepsonse delegate = null;
     public AsyncAddressResponse addressDelegate = null;
-    public AsyncPostResponse postDelegate = null;
+
+    public AsyncPostOrderResponse postOrderDelegate = null;
+    public AsyncPostRoomResponse postRoomDelegate = null;
+    public AsyncPostBuildingResponse postBuildingDelegate = null;
+
 
     public static ArrayList<Building> buildings = new ArrayList<>();
 
@@ -46,72 +52,13 @@ public class WebHandler {
     public ArrayList<Room> nonAsyncRooms = new ArrayList<>();
     public ArrayList<Order> nonAsyncOrders= new ArrayList<>();
 
-    static ArrayList<Room> rooms = new ArrayList<>();
-    static ArrayList<Order> orders = new ArrayList<>();
-    Building b1, b2, b3;
-    Room r1,r2,r3,r4,r5;
-    Order o1,o2,o3;
-
     public String address;
 
     String jsonString;
 
     public WebHandler(){
-
-       /* r1 = new Room(1, "P1");
-        r2 = new Room(2, "p2");
-        r3 = new Room(3, "p3");
-        r4 = new Room(4,"P4");
-        r5 = new Room(5,"p5");
-
-        o1 = new Order(1,"Øving", "20.11.19");
-        o2 = new Order(1,"LEsing", "20.11.19");
-        o3 = new Order(1,"Jobbing", "20.11.19");
-
-
-        b1 = new Building();
-        b1.setName("Frogner");
-        b1.setLatLng(new LatLng(59.913868,10.752245));
-        b1.getRooms().add(r1);
-        b1.getRooms().add(r2);
-        b1.getRooms().get(0).getOrders().add(o1);
-        b1.getRooms().get(1).getOrders().add(o2);
-
-        b2 = new Building();
-        b2.setName("Grefsen");
-        b2.setLatLng(new LatLng(59.949970,10.781900));
-        b2.getRooms().add(r3);
-        b2.getRooms().add(r4);
-        b2.getRooms().get(0).getOrders().add(o3);
-
-        b3 = new Building();
-        b3.setLatLng(new LatLng(59.897682,10.779931));
-        b3.setName("Ekeberg");
-
-        buildings.add(b1);
-        buildings.add(b2);
-        buildings.add(b3);
-
-        rooms.add(r1);
-        rooms.add(r2);
-        rooms.add(r3);
-        rooms.add(r4);
-        rooms.add(r5);
-
-        orders.add(o1);
-        orders.add(o2);
-        orders.add(o3);*/
     }
 
-    public static List<Building> getBuildings(){
-        return buildings;
-    }
-
-   /* public List<Building> getAsyncBuildings(){
-        GetJSON task = new GetJSON();
-        task.execute(new String[]{"http://student.cs.hioa.no/~s326149/getbuildings.php","http://student.cs.hioa.no/~s326149/getrooms.php","http://student.cs.hioa.no/~s326149/getorders.php"});
-        return asyncBuildings;
-    }*/
 
    public String getNonAsyncBuildings(){
        Log.d("non", "eh");
@@ -190,8 +137,6 @@ public class WebHandler {
     }
 
     private class GetJSON extends AsyncTask<String, Void,String> {
-
-        JSONObject jsonObject;
 
         @Override
         protected String doInBackground(String... urls) {
@@ -378,7 +323,11 @@ public class WebHandler {
         protected void onPostExecute(String result) {
             Log.d("POST ROOM", "FINISHED");
             //resultat = "POSt ROOM";
-            postDelegate.postFinish(result);
+            if(postRoomDelegate != null) {
+                postRoomDelegate.postRoomFinish(result);
+            }else{
+                Log.d("postroom", "null");
+            }
         }
     }
 
@@ -438,7 +387,11 @@ public class WebHandler {
         @Override
         protected void onPostExecute(String result) {
             Log.d("POST BUILDING:", result);
-            postDelegate.postFinish(result);
+            if(postBuildingDelegate!= null) {
+                postBuildingDelegate.postBuildingFinish(result);
+            }else{
+                Log.d("postbuilding", "null");
+            }
         }
     }
 
@@ -508,7 +461,11 @@ public class WebHandler {
         protected void onPostExecute(String result) {
             Log.d("POST ORDER:", "FINISHED");
             Log.d("Post order res", result);
-            postDelegate.postFinish(result);
+            if(postOrderDelegate != null) {
+                postOrderDelegate.postOrderFinish(result);
+            }else{
+                Log.d("Post order", "Null");
+            }
         }
     }
 

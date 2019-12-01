@@ -6,14 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.kart.MainActivity;
 import com.example.kart.R;
-import com.example.kart.fragments.models.Building;
-import com.example.kart.fragments.models.Order;
-import com.example.kart.fragments.models.Room;
-import com.example.kart.fragments.models.WebHandler;
+import com.example.kart.models.Building;
+import com.example.kart.models.Order;
+import com.example.kart.models.Room;
+import com.example.kart.models.WebHandler;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

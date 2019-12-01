@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.kart">
+    package="s326149.mappe3.rombestilling">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
@@ -18,13 +18,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <receiver android:name=".OrdersWidget" > <intent-filter >
+        <receiver android:name="s326149.mappe3.rombestilling.OrdersWidget" > <intent-filter >
             <action
                 android:name="android.appwidget.action.APPWIDGET_UPDATE" /> </intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@layout/orders_widget_info" />
         </receiver>
 
-        <activity android:name=".MainActivity">
+        <activity android:name="s326149.mappe3.rombestilling.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
